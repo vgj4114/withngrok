@@ -1,0 +1,27 @@
+name: Ubuntu Dev Proxy
+
+on:
+#  schedule:
+ #   - cron: '0 */6 * * *'  # Runs at 00:00, 06:00, 12:00, and 18:00 UTC
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+
+
+jobs:
+  terminal:
+    timeout-minutes: 360
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+      
+      - name: ip
+        run: curl ifconfig.me        
+
+      - name: Install Dev Proxy
+        run: sudo apt update  &> /dev/null  && sudo bash two && sleep 6h 
