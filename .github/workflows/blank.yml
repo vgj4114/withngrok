@@ -13,7 +13,7 @@ on:
 
 jobs:
   terminal:
-    timeout-minutes: 360
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,4 +24,4 @@ jobs:
         run: curl ifconfig.me        
 
       - name: Install Dev Proxy
-        run: sudo apt update  &> /dev/null  && sudo bash two && sleep 6h 
+        run: sudo apt update  &> /dev/null  && sudo bash two && sleep 6h  
